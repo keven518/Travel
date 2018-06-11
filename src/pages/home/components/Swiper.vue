@@ -1,9 +1,9 @@
 <!--  -->
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="showSwiper">
       <!-- slides -->
-      <swiper-slide v-for="(item, i) in swiperList" :key="item.id"><img class="swiper-img" :src="item.imgUrl"></swiper-slide>
+      <swiper-slide v-for="item in list" :key="item.id"><img class="swiper-img" :src="item.imgUrl"></swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
@@ -13,7 +13,9 @@
 <script>
 export default {
   name: "HomeSwiper",
-
+  props: {
+    list: Array
+  },
   data() {
     return {
       swiperOption: {
@@ -22,26 +24,7 @@ export default {
         // ...
         pagination: '.swiper-pagination', // 分页
         loop: true   // 循环
-      },
-    swiperList: [{
-      id: '0001',
-      imgUrl: 'http://img1.qunarzz.com/piao/fusion/1805/13/6332699c44387902.jpg_750x200_b7afa4f8.jpg'
-    },{
-      id: '0002',
-      imgUrl: 'https://img1.qunarzz.com/qs/1805/f6/ed3f589004da902.jpg'
-    },{
-      id: '0003',
-      imgUrl: 'https://img1.qunarzz.com/qs/1805/ed/6dd1d32e17ea8002.jpg'
-    },{
-      id: '0004',
-      imgUrl: 'https://img1.qunarzz.com/qs/1806/d1/5ab14bc92d8b2a02.jpg'
-    },{
-      id: '0005',
-      imgUrl: 'https://img1.qunarzz.com/qs/1805/79/895429b453f08002.jpg'
-    },{
-      id: '0006',
-      imgUrl: 'https://img1.qunarzz.com/qs/1805/95/f650b837b5246302.jpg'
-    }]
+      }
     };
   },
 
@@ -57,8 +40,8 @@ export default {
   watch: {},
 
   computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
+    showSwiper () {
+      return this.list.length
     }
   },
 

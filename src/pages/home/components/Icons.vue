@@ -22,68 +22,14 @@
 <script>
 export default {
   name: 'HomeIcons',
-
+  props: {
+    list: Array
+  },
   data () {
     return {      
       swiperOption: {
-      },
-      iconList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票景点门票景点门票'
-      },{
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        desc: '滑雪季'
-      },{
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/89/55083b0f1951f302.png',
-        desc: '景点门票'
-      },{
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-        desc: '景点门票'
-      },{
-        id: '0005',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ed/cf572be30fc32f02.png',
-        desc: '景点门票'
-      },{
-        id: '0006',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png',
-        desc: '景点门票'
-      },{
-        id: '0007',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
-        desc: '景点门票'
-      },{
-        id: '0008',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
-        desc: '景点门票'
-      },{
-        id: '0009',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/27/dac2bcf9added702.png',
-        desc: '景点门票'
-      },{
-        id: '0010',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-        desc: '景点门票'
-      },{
-        id: '0011',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        desc: '景点门票'
-      },{
-        id: '0012',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        desc: '景点门票'
-      },{
-        id: '0013',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        desc: '景点门票'
-      },{
-        id: '0014',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        desc: '景点门票'
-      }]
+        autoplay: false
+      }      
     };
   },
 
@@ -96,7 +42,7 @@ export default {
   computed: {
     pages () {  // 把iconList拆分成二维数组
       const pages = []
-      this.iconList.forEach((item, i) => {
+      this.list.forEach((item, i) => {
         const page = Math.floor(i / 8)
         if (!pages[page]) {
           pages[page] = []

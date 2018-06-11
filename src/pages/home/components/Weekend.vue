@@ -5,7 +5,7 @@
   <ul>
     <li 
       class="item border-bottom" 
-      v-for="item of recommendList" 
+      v-for="item of list" 
       :key="item.id"
     >
       <div class="item-img-wrapper">
@@ -23,36 +23,11 @@
 <script>
 export default {
   name: 'HomeWeekend',
-
+  props: {
+    list: Array
+  },
   data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'https://imgs.qunarzz.com/sight/source/1505/5e/6e13db8af6ec30.jpg_r_640x214_5c1b0fa9.jpg',
-        title: '三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士',
-        desc: '亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园'
-      },{
-        id: '0002',
-        imgUrl: 'https://imgs.qunarzz.com/sight/source/1505/a4/df8543b6b8506d.jpg_r_640x214_660e1e3a.jpg',
-        title: '三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士',
-        desc: '亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园'
-      },{
-        id: '0003',
-        imgUrl: 'https://imgs.qunarzz.com/sight/source/1505/3d/f99f5c73b52c4d.jpg_r_640x214_4e60b24c.jpg',
-        title: '三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士',
-        desc: '亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园'
-      },{
-        id: '0004',
-        imgUrl: 'https://imgs.qunarzz.com/sight/source/1602/bf/a2ac57b8bfe7cd.jpg_r_640x214_406d4c7e.jpg',
-        title: '三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士',
-        desc: '亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园'
-      },{
-        id: '0005',
-        imgUrl: 'https://imgs.qunarzz.com/sight/source/1505/3e/a588a413145dbe.jpg_r_640x214_b3729b6e.jpg',
-        title: '三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士三亚海上观光巴士',
-        desc: '亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园亚龙湾热带天堂森林公园'
-      }]
-    };
+    return {};
   },
 
   created(){},
@@ -73,14 +48,13 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
   .title
-    margin-top .2rem
     line-height .8rem
     background #eee
     text-indent .2rem
   .item-img-wrapper
     overflow hidden
     height 0
-    padding-bottom 33.9%
+    padding-bottom 37.09%
     .item-img
       width 100%
   .item-info
