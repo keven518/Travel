@@ -11,7 +11,8 @@
     <router-link to="/city">
       <div class="header-right">
         <!-- {{this.$store.state.city}} -->
-        {{this.doubleCity}}
+        <!-- {{this.doubleCity}} -->
+        {{this.city}}
         <span class='iconfont arrow-icon'>&#xe64a;</span>
       </div>
     </router-link>
