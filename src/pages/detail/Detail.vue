@@ -1,12 +1,15 @@
 <!--  -->
 <template>
   <div>
-    <datail-banner></datail-banner>
+    <detail-banner></detail-banner>
+    <detail-header></detail-header>
+    <div class="contain"></div>
   </div>
 </template>
 
 <script>
-import DatailBanner from './components/Banner'
+import DetailBanner from './components/Banner'
+import DetailHeader from './components/Header'
 export default {
   name: 'Datail',
 
@@ -26,10 +29,13 @@ export default {
   methods: {},
 
   components: {
-    DatailBanner
+    DetailBanner,
+    DetailHeader
   }
 }
 
 </script>
 <style lang='stylus' scoped>
+.contain
+  height 50rem
 </style>
