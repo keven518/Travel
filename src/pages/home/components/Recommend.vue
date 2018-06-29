@@ -17,7 +17,6 @@
         <button class="item-button">查看详情</button>
       </div>
     </router-link>
-    </router-link>
   </ul>
 </div>  
 </template>

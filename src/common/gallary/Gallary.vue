@@ -40,7 +40,9 @@ export default {
 
   created(){},
 
-  mounted(){},
+  mounted(){
+    console.log('g-imgs: ', this.imgs)
+  },
 
   watch: {},
 

@@ -2,14 +2,14 @@
 <template>
 <div>
   <div class="banner" @click="handleBannerClick">
-    <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1412/e9/d5c72454d47eda983bd4e857c9c361d8.water.jpg_600x330_396672b0.jpg" alt="">
+    <img class="banner-img" :src="bannerImg" alt="">
     <div class="banner-info">
       <div class="banner-title">
-        分界洲岛(AAAAA景区)
+        {{sightName}}
       </div>
       <div class="banner-number">        
         <span class='iconfont banner-icon'>&#xe692;</span>
-        39
+        {{bannerImgs.length}}
       </div>
     </div>
   </div>
@@ -24,7 +24,13 @@
 <script>
 import CommonGallary from 'common/gallary/Gallary'
 export default {
-  name: '',
+  name: 'DetailBanner',
+
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
 
   data () {
     return {
@@ -38,7 +44,9 @@ export default {
 
   created(){},
 
-  mounted(){},
+  mounted(){
+    console.log('bannerImg: ', this.bannerImg)
+  },
 
   watch: {},
 
